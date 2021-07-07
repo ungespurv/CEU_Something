@@ -50,14 +50,12 @@ Y_label = ['semi major axis uncertainty', 'eccentricity uncertainty',
                   'inclination_upper uncertainty', 'argument of perihelion uncertainty',
             'longitude of ascending node uncertainty', 'mean anomaly uncertainty']
 
-# fig = plt.figure(figsize=(11, 6))
-# ax1 = fig.add_subplot(111)
 for i in range(len(X1)):
     plt.figure()
     plt.scatter(x=length_of_observing_arc_days, y=X1[i], label=X1_description[i])
     plt.scatter(x=length_of_observing_arc_days, y=X2[i], label=X2_description[i])
     # plt.xscale('log')
-    # plt.yscale('log')
+    plt.yscale('log')
     plt.ylabel(Y_label[i])
     plt.xlabel('length of observing arc days')
     plt.legend()
