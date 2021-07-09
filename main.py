@@ -51,11 +51,13 @@ Y_label = ['semi major axis uncertainty', 'eccentricity uncertainty',
             'longitude of ascending node uncertainty', 'mean anomaly uncertainty']
 
 for i in range(len(X1)):
-    plt.figure()
-    plt.scatter(x=length_of_observing_arc_days, y=X1[i], label=X1_description[i])
-    plt.scatter(x=length_of_observing_arc_days, y=X2[i], label=X2_description[i])
-    # plt.xscale('log')
+    plt.figure(figsize=(16, 8))
+    plt.scatter(x=length_of_observing_arc_days, y=X1[i], label=X1_description[i], s=0.75, c='red')
+    plt.scatter(x=length_of_observing_arc_days, y=X2[i], label=X2_description[i], s=0.75, c='green')
+    plt.xscale('log')
     plt.yscale('log')
+    plt.ylim(1e-7, 1000)
+    plt.xlim(1e-2, 10000)
     plt.ylabel(Y_label[i])
     plt.xlabel('length of observing arc days')
     plt.legend()
